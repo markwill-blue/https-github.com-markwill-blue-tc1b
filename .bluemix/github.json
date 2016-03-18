@@ -42,6 +42,10 @@
             {
               "type": "icon",
               "iconType": "right_arrow"
+            },
+            {
+              "type": "text",
+              "key": "tc1-repo_name"
             }
         ]
       }
