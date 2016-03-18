@@ -41,20 +41,12 @@
             "description": "The bluemix space",
             "type": "string"
         },
-        "orders-app-name": {
-            "description": "orders app name",
-            "type": "string"
-        },
-       "catalog-app-name": {
-            "description": "catalog app name",
-            "type": "string"
-        },
-       "ui-app-name": {
-            "description": "ui app name",
+        "tc1-app-name": {
+            "description": "tc1 app name",
             "type": "string"
         }
     },
-    "required": ["dev-region", "dev-organization", "dev-space", "qa-region", "qa-organization", "qa-space", "prod-region", "prod-organization", "prod-space", "orders-app-name", "catalog-app-name", "ui-app-name"],
+    "required": ["dev-region", "dev-organization", "dev-space", "qa-region", "qa-organization", "qa-space", "prod-region", "prod-organization", "prod-space", "tc1-app-name"],
     "form": [
        {
           "type": "validator",
@@ -63,20 +55,8 @@
        {
           "type": "text",
           "readonly": false,
-          "title": "Orders App Name",
+          "title": "TC1 App Name",
           "key": "orders-app-name"
-        },
-        {
-          "type": "text",
-          "readonly": false,
-          "title": "Catalog App Name",
-          "key": "catalog-app-name"
-        },
-        {
-          "type": "text",
-          "readonly": false,
-          "title": "UI App Name",
-          "key": "ui-app-name"
         },
         {
             "type": "table",
