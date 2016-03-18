@@ -25,10 +25,10 @@ tc1-build:
     name: "tc1-{{name}}"
     metadata: pipeline.yml
     env:
-      GIT_REPO_URL: ${orders-api-repo.parameters.repo-url}
+      GIT_REPO_URL: ${tc1-repo.parameters.repo-url}
       SAUCE_USER: "{{test.parameters.username}}"
       API_KEY: "{{test.parameters.key}}"
-      CF_APP_NAME: "{{deploy.parameters.orders-app-name}}"
+      CF_APP_NAME: "{{deploy.parameters.tc1-app-name}}"
       DEV_SPACE_NAME: "{{deploy.parameters.dev-space}}"
       DEV_ORG_NAME: "{{deploy.parameters.dev-organization}}"
       DEV_REGION_ID: "{{deploy.parameters.dev-region}}"
@@ -81,9 +81,7 @@ deploy:
     dev-space: dev
     qa-space: qa
     prod-space: prod
-    orders-app-name: "{{orders-api-repo.parameters.repo_name}}"
-    catalog-app-name: "{{catalog-api-repo.parameters.repo_name}}"
-    ui-app-name: "{{ui-repo.parameters.repo_name}}"
+    tc1-app-name: "{{tc1-repo.parameters.repo_name}}"
 
 #Github
 github:
