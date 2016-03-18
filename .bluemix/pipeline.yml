@@ -1,0 +1,32 @@
+---
+stages:
+- name: Build
+  inputs:
+  - type: git
+    branch: master
+  triggers:
+  - type: commit
+  properties:
+  - name: REGISTRY
+    value: registry.ng.bluemix.net/xdc1
+    type: text
+  jobs:
+  - name: DEV
+    type: builder
+    extension_id: ibm.devops.services.pipeline.container.builder
+    target:
+      url: https://api.ng.bluemix.net
+      organization: markwill@us.ibm.com
+      space: dev
+    IMAGE_NAME: proxy
+    USE_CACHED_LAYERS: 'true'
+    COMMAND: |-
+      #!/bin/bash -x
+
+      cd build/elasticsearch
+      ./build
+      ./start
+
+      cd ../proxy
+      ./build
+      ./start
